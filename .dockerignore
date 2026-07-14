@@ -1,0 +1,10 @@
+.git
+.gitignore
+*.md
+tmp/
+bin/
+*.exe
+*.test
+.idea/
+.vscode/
+*.out

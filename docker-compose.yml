@@ -1,0 +1,18 @@
+services:
+  ais140-server:
+    build: .
+    container_name: ais140-socket
+    ports:
+      - "5001:5001"
+    environment:
+      AIS140_HOST: "0.0.0.0"
+      AIS140_PORT: "5001"
+      AIS140_READ_TIMEOUT: "5m"
+      AIS140_WRITE_TIMEOUT: "30s"
+      AIS140_READ_BUFFER: "4096"
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
